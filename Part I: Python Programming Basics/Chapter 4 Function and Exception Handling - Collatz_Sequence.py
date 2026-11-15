@@ -12,24 +12,20 @@ def collatz(number):
 
     """
     try:
-      number = int(number)
-      if number <= 0:
-          raise ValueError("Input must be a positive integer.")
+        number = int(number)
+        if number <= 0:
+            raise ValueError("Input must be a positive integer.")
       
-      while number != 1:
-          if number % 2 == 0:
-             number = number // 2
-          else:
-             print(number, end=" ")
-             number = 3 * number + 1 
-          print(number, end=" ")
-
-      return number
-
+        while number != 1:
+            print(number, end=" ")
+            if number % 2 == 0:
+               number = number // 2
+            else:
+               number = 3 * number + 1
+        print(number)  # Print the final number (1) in the sequence
     except ValueError:
         print("Invalid input. Please enter a positive integer.")
         return None
 
 number = input("Enter a positive integer: ")
 collatz(number)
-print()  # Print a newline after the sequence
